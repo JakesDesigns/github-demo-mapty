@@ -232,11 +232,12 @@ class App {
     const workout = this.#workouts.find(
       work => work.id === workoutEl.dataset.id
     );
-    console.log(workoutEl);
-    console.log(workout);
 
     this.#map.setView(workout.coords, this.#mapZoomLevel, {
       animate: true,
+      pan: {
+        duration: 1,
+      },
     });
   }
 }
